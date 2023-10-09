@@ -1,0 +1,12 @@
+# Java und Maven
+/target/
+*.class
+*.jar
+hs_err_pid*
+replay_pid*
+
+# IntelliJ
+.idea/
+/out/
+/lib/
+*.iml

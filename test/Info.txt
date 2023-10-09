@@ -1,0 +1,3 @@
+Hier kommen die Unit-Tests rein.
+
+Diese Datei wurde nur deshalb angelegt, damit das Verzeichnis test auch in Git angelegt wird, denn Git-Repos können keine leeren Verzeichnisse beinhalten.
