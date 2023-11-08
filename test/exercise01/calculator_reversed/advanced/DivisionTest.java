@@ -1,3 +1,5 @@
+package exercise01.calculator_reversed.advanced;
+
 import exercise01.calculator_reversed.advanced.Division;
 import exercise01.calculator_reversed.advanced.IBinaryOperation;
 import org.junit.Assert;
@@ -32,7 +34,7 @@ public class DivisionTest {
         double result = division.calculate(-1.0, 3.0);
 
         // THEN: Ergebnis ist -0.333333333333
-        Assert.assertEquals(-0.333333333333, result, DELTA);
+        Assert.assertEquals(-1.0/3, result, DELTA);
     }
 
     @Test

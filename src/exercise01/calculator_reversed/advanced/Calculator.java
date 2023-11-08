@@ -6,7 +6,6 @@ public class Calculator {
     private IBinaryOperation[] operations =
             new IBinaryOperation[]{new Power(), new Division(), new Multiplication(), new Subtraction(), new Addition()};
 
-    //new Addition(), new Subtraction(), new Multiplication(), new Division(), new Power()
     public String[] listOperations() {
         String[] list = new String[operations.length];
 
