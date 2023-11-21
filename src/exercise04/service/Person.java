@@ -54,5 +54,7 @@ public class Person {
         return getAge() == person.getAge() && Objects.equals(getFirstName(), person.getFirstName())
                 && Objects.equals(getLastName(), person.getLastName()) && getGender() == person.getGender();
     }
+// immer auch auf null und is empty überprüfen
+
 
 }

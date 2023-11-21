@@ -37,7 +37,8 @@ public class PersonTextFileRepository implements IPersonRepository {
         try {
             List<String> lines = new ArrayList<>();
             for (Person person : persons) {
-                lines.add(String.format("%s;%s;%d;%s", person.getFirstName(), person.getLastName(),
+                lines.add(String.format("%s;%s;%d;%s",
+                        person.getFirstName(), person.getLastName(),
                         person.getAge(), person.getGender()));
             }
             Files.write(path, lines);

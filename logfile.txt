@@ -1,0 +1,15 @@
+2023-11-20T19:05:48.355473: EmailCrawlService initiated.
+2023-11-20T19:05:48.367525: Creating request to https://www.htwg-konstanz.de/hochschule/fakultaeten/informatik/orga/professoren/schneider/
+2023-11-20T19:05:48.396935: Executing request.
+2023-11-20T19:05:49.382984: Got response with status 200
+2023-11-20T19:05:49.420586: Found email johannes.schneider@htwg-konstanz.de
+2023-11-20T19:09:24.766934: EmailCrawlService initiated.
+2023-11-20T19:09:24.782408: Creating request to https://www.htwg-konstanz.de/hochschule/fakultaeten/informatik/orga/professoren/bohnet/
+2023-11-20T19:09:24.810856: Executing request.
+2023-11-20T19:09:25.835629: Got response with status 200
+2023-11-20T19:09:25.866198: Found email doris.bohnet@htwg-konstanz.de
+2023-11-20T20:47:42.07671: EmailCrawlService initiated.
+2023-11-20T20:47:42.09554: Creating request to https://www.htwg-konstanz.de/hochschule/fakultaeten/informatik/orga/professoren/bohnet/
+2023-11-20T20:47:42.127599: Executing request.
+2023-11-20T20:47:43.277369: Got response with status 200
+2023-11-20T20:47:43.306161: Found email doris.bohnet@htwg-konstanz.de

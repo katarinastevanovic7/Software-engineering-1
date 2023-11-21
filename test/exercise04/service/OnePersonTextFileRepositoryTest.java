@@ -17,4 +17,5 @@ public class OnePersonTextFileRepositoryTest {
         System.out.println(personLoadedAgain);
         Assert.assertEquals(max, personLoadedAgain);
     }
+    //person equals methode
 }

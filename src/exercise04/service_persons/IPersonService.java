@@ -7,7 +7,7 @@ public interface IPersonService {
     void savePersons(Person[] persons);
 
     boolean isAllowedToDriveAloneInACar(Person person);
-
+    //aufgabe 1d
     default Person findByLastName(String lastName) {
         Person[] persons = loadPersons();
         for (Person person : persons) {
