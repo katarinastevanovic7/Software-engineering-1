@@ -1,0 +1,33 @@
+TODO: Schreiben Sie Ihre Antworten für Aufgabe 3 in diese Datei.
+- Exception (checked):
+    Für Fehler, auf die der Aufrufer sinnvoll reagieren kann.
+    D.h., der Code, der die Exception "abbekommt", also das laufende Java-Programm kann den Fehler behandeln.
+    (FileNotFoundException: Benutzer*in wird aufgefordert, eine andere Datei auszuwählen).
+− Exception (unchecked):
+    Programmierfehler bzw. unvorhergesehene Fehler im Code, der die aktuelle Methode aufruft. Auf Programmierfehler kann man im laufenden Java-Programm nicht sinnvoll reagieren,
+    Man muss den Code erst wieder ändern, damit das Programm laufen kann
+    (fehlende Null-Checks, Methode mit falschen Parametern aufgerufen etc.) gehören in diese Kategorie
+
+a) Ein Parameter muss eine Primzahl sein, ist es aber nicht.
+      -> unchecked: falsche Eingabe durch den Benutzer
+
+b) Methode darf nur sonntags ausgeführt werden, wird aber an einem anderen Tag ausgeführt.
+      -> unchecked: Der Tag (Sonntag) ist nicht änderbar
+
+c) Ein Netzwerkverbindungsfehler ist aufgetreten.
+       -> checked: auf den Fehler kann man reagieren, z.B. einen neuen Verbindungsversuch starten
+
+d) Die zentrale Konfigurationsdatei ist beim Programmstart nicht vorhanden.
+       -> unchecked, Konfigurationsfehler auf den man nicht sinnvoll im Programm reagieren kann.
+          Jemand muss die Datei erstellen und das Programm neustarten.
+
+e) Der Zugriff auf eine Datei ist nicht möglich, weil keine ausreichenden Rechte vorhanden sind.
+      -> checked: Rechte kann man ggf. noch ändern
+
+f) Das Programm erwartet, dass der "grep "-Befehl auf dem System installiert ist, ist es aber nicht.
+      -> unchecked: Konfigurationsfehler auf dem System
+
+g)Eine Datei wird gelesen, aber die Zeichencodierung der Datei wird nicht unterstützt.
+      -> checked: man kann eine andere Datei auswählen
+      -> unchecked: Datei ist "Illegal Argument", da man die unterstützten Zeichencodierungen nicht schnell ändern kann
+

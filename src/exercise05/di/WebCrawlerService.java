@@ -23,6 +23,9 @@ public class WebCrawlerService {
     }
 
     private static final Pattern SIMPLE_EMAIL_PATTERN = Pattern.compile("\\S+@\\S+\\.\\S+");
+        // \\S+ sucht nach nicht leerzeichen
+        // @ sucht nach @
+        // \\. sucht nach einem Punkt
 
     //nimmt eine URL als Eingabe und versucht, eine HTTP Anfrage an diese URL zu senden
     //nach HTTP Antwort wird der Text nach einer einfachen Email Adresse durchsucht
