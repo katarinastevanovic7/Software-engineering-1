@@ -13,3 +13,8 @@
 2023-11-20T20:47:42.127599: Executing request.
 2023-11-20T20:47:43.277369: Got response with status 200
 2023-11-20T20:47:43.306161: Found email doris.bohnet@htwg-konstanz.de
+2023-11-22T13:46:34.333669: EmailCrawlService initiated.
+2023-11-22T13:46:34.34821: Creating request to https://www.htwg-konstanz.de/hochschule/fakultaeten/informatik/orga/professoren/bohnet/
+2023-11-22T13:46:34.38311: Executing request.
+2023-11-22T13:47:04.955915: Got exception null
+2023-11-22T13:47:04.956652: returning null

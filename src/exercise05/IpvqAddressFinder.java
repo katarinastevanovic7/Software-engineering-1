@@ -17,7 +17,7 @@ public class IpvqAddressFinder {
         int counter = 0;
 
         // TODO
-
+        // zählt wie viele korrekte einträge im string text
         while (matcher.find()) {
             counter++;
         }

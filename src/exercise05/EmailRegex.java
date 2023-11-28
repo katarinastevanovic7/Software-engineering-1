@@ -7,5 +7,11 @@ public class EmailRegex {
     // @ trennt Benutzernamen von der Domain
     // \\. trennt die Domain von der top level domain
     // {2,} teil hinter dem letzten Punkt ist mindestens 2 Zeichen lang
-    // benutzername@domain
+    // benutzername@domain.topdomain
+    // [^\s@] steht für beliebig viele Zeichen vor dem @
+    // +: min 1 Zeichen bis n Länge (gehört zu dem Kommentar davor)
+    // das @ selbst steht für @
+    // \\ Trennung und danach kommt der Punkt, der . steht für den tatsächlichen
+
+
 }

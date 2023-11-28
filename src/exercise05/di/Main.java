@@ -17,14 +17,18 @@ public class Main {
         System.out.println("- EMAIL: " + email2);
 
         //1f
+        // Erstellen einer anonymen Klasse, die ILogService implementiert die nichts tut
         ILogService dummyLogService = new ILogService() {
             @Override
             public void log(String massage) {
+                //diese log Methode tut nichzs
             }
         };
 
+        //Verwenden von dummyLogService in einer Instanz von WebCrawlerService
         WebCrawlerService webCrawlerService3 = new WebCrawlerService(dummyLogService);
         String email3 = webCrawlerService3.findEmail("https://www.htwg-konstanz.de/hochschule/fakultaeten/informatik/orga/professoren/schneider/");
+        //Ausgabe der abgerufenen Klasse
         System.out.println("- EMAIL: " + email3);
     }
 }
