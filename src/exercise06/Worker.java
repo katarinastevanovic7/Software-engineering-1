@@ -7,6 +7,7 @@ public class Worker implements INameInMultipleCases {
 
     private String name;
 
+    // Ein leerer Konstruktor, der ein Objekt der Klasse Worker initialisiert
     public Worker() {
     }
 
@@ -23,11 +24,14 @@ public class Worker implements INameInMultipleCases {
         this.name = name;
     }
 
+
     /**
-     * Returns the name of this worker in upper case letters.
-     * Note that {@link Worker#initialize(String)} has to be called first
+     * Gibt den Namen dieses Workers in Großbuchstaben zurück.
+     * Beachten Sie, dass zuerst die Methode {@link Worker#initialize(String)} aufgerufen werden muss.
      *
-     * @return
+     * @return Der Name des Workers in Großbuchstaben.
+     * @throws IllegalStateException, wenn die Methode {@link Worker#initialize(String)} nicht korrekt aufgerufen wurde.
+     *         Dies weist darauf hin, dass der Zustand der aktuellen Klasse den Methodenaufruf nicht erlaubt.
      */
     public String getNameInUpperCase() {
         //TODO a) implement method and handle the case that initialize was not called correctly.
@@ -39,9 +43,18 @@ public class Worker implements INameInMultipleCases {
             return upperName;
         } catch (IllegalStateException ise) {
             throw new IllegalStateException("initialize has to be called first");
+            // IllegalStateException: der Zustand der aktuellen Klasse, erlaubt den Methodenaufruf nicht
         }
     }
 
+    /**
+     * Gibt den Namen dieses Workers in Kleinbuchstaben zurück.
+     * Beachten Sie, dass zuerst die Methode {@link Worker#initialize(String)} aufgerufen werden muss.
+     *
+     * @return Der Name des Workers in Kleinbuchstaben.
+     * @throws UnsupportedOperationException, wenn der Name bereits in Kleinbuchstaben ist.
+     *         Dies deutet darauf hin, dass die Methode nicht angemessen implementiert ist.
+     */
     @Override
     public String getNameInLowerCase() {
         //TODO b) indicate that this method is not implemented appropriately and document this behaviour
@@ -52,6 +65,7 @@ public class Worker implements INameInMultipleCases {
             return name.toLowerCase();
         } catch (UnsupportedOperationException uoe) {
             throw new UnsupportedOperationException("Method is not implemented");
+            //UnsupportedOperationException: wenn der Name des Workers bereits in Kleinbuchstaben vorliegt
         }
     }
 

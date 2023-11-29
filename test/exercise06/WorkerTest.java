@@ -5,20 +5,21 @@ import org.junit.Test;
 
 public class WorkerTest {
 
+    //Aufgabe 2c
     @Test
     public void getNameInUpperCaseValid() {
-        Worker Isci = new Worker();
-        Isci.initialize("Isci");
+        Worker worker = new Worker();
+        worker.initialize("Katarina");
 
-        String upperIsci = Isci.getNameInUpperCase();
-        Assert.assertEquals("ISCI", upperIsci);
+        String upperKatarina = worker.getNameInUpperCase();
+        Assert.assertEquals("KATARINA", upperKatarina);
     }
 
     @Test
     public void getNameInUpperCaseError() {
-        Worker Isci = new Worker();
+        Worker worker = new Worker();
         try {
-            String upperIsci = Isci.getNameInUpperCase();
+            String upperKatarina = worker.getNameInUpperCase();
             Assert.fail("Illegal State Exception thrown");
         } catch (IllegalStateException iae) {
             Assert.assertEquals("initialize has to be called first", iae.getMessage());

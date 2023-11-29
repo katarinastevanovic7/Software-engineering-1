@@ -13,7 +13,7 @@ public class MultiFunctionalUtility {
     //         Don't forget to add JavaDoc!
 
     /**
-     * Diese Methode nimmt zwei Double-Argumente entgegen und gibt das Ergebnis der Division zurück.
+     * Diese Methode nimmt zwei Double-Argumente entgegen und gibt das Ergebnis der Division zurück
      *
      * @param divident Dividend der Division
      * @param divisor  Divisor der Division
@@ -35,6 +35,7 @@ public class MultiFunctionalUtility {
      * @return Fakultät der Zahl als Integer
      * @throws IllegalArgumentException wenn die Zahl negativ ist
      */
+        //IllegalArgumentException: Parameter ist nicht null, aber hat ungültigen Wert
     public static int faculty(int number) throws IllegalArgumentException {
         if(number < 0) {
             throw new IllegalArgumentException("Negative Zahlen haben keine Fakultät");
@@ -56,11 +57,15 @@ public class MultiFunctionalUtility {
      * @return neuer String, der den ursprünglichen String multipliziert enthält
      * @throws IllegalArgumentException wenn n kleiner als 1 ist
      */
+    //IllegalArgumentException: Parameter ist nicht null, aber hat ungültigen Wert
     public static String multiplyString(String S, int n) throws IllegalArgumentException {
         if (n < 1) {
             throw new IllegalArgumentException("Die Anzahl der Multiplikationen muss größer als 0 sein!");
         }
         StringBuilder text  = new StringBuilder();
+        //Stringbuilder erlaubt ie direkte Änderung des Inhalts, ohne ständig neue Objekte zu erstellen
+        //S wird so lange zum StringBuilder hinzugefügt, wie der Faktor n größer als 0 ist.
+        // In jedem Schleifenzyklus wird n um eins reduziert
         do {
             text.append(S);
             n--;

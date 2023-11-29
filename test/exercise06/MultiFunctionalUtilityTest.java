@@ -22,7 +22,7 @@ public class MultiFunctionalUtilityTest {
         assertEquals("Hello world", MultiFunctionalUtility.formatString("hello world"));
         assertEquals("Htwg", MultiFunctionalUtility.formatString("htwg"));
         assertEquals("Kss", MultiFunctionalUtility.formatString("KSS"));
-        assertEquals("Bb", MultiFunctionalUtility.formatString("bb")); // nur ein B?
+        assertEquals("Bb", MultiFunctionalUtility.formatString("bb"));
     }
 
     //1c
@@ -33,6 +33,7 @@ public class MultiFunctionalUtilityTest {
             Assert.fail("Arithmetic Exception thrown");
         } catch (ArithmeticException e) {
             Assert.assertEquals("Division durch 0 ist nicht erlaubt!", e.getMessage());
+            //.getMessage() liefert Informationen darüber, warum die Ausnahme ausgelöst wurde
         }
     }
 
