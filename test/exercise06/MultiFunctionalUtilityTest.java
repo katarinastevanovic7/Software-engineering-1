@@ -23,6 +23,7 @@ public class MultiFunctionalUtilityTest {
         assertEquals("Htwg", MultiFunctionalUtility.formatString("htwg"));
         assertEquals("Kss", MultiFunctionalUtility.formatString("KSS"));
         assertEquals("Bb", MultiFunctionalUtility.formatString("bb"));
+        assertEquals("B", MultiFunctionalUtility.formatString("b"));
     }
 
     //1c
@@ -51,5 +52,10 @@ public class MultiFunctionalUtilityTest {
         } catch (IllegalArgumentException eee) {
             Assert.assertEquals("Der String muss mindestens die Länge eins haben!", eee.getMessage());
         }
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void testFormatStringWithNull() {
+        MultiFunctionalUtility.formatString(null);
     }
 }

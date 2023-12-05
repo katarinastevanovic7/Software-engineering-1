@@ -23,6 +23,9 @@ public class WorkerTest {
             Assert.fail("Illegal State Exception thrown");
         } catch (IllegalStateException iae) {
             Assert.assertEquals("initialize has to be called first", iae.getMessage());
+            // IllegalStateException: der Zustand der aktuellen Klasse erlaubt den Methodenaufruf nicht
+            //Versucht, den in Großbuchstaben geschriebenen Namen mit getNameInUpperCase abzurufen,
+            // ohne zuerst initialize aufzurufen
         }
     }
 }

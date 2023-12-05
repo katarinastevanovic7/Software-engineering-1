@@ -26,6 +26,7 @@ public class MultiFunctionalUtility {
         }
         double result = divident / divisor;
         return result;
+        //ArithmeticException wenn man beispielsweise durch 0 teilt
     }
 
     /**
@@ -64,7 +65,7 @@ public class MultiFunctionalUtility {
         }
         StringBuilder text  = new StringBuilder();
         //Stringbuilder erlaubt ie direkte Änderung des Inhalts, ohne ständig neue Objekte zu erstellen
-        //S wird so lange zum StringBuilder hinzugefügt, wie der Faktor n größer als 0 ist.
+        //S wird so lange zum StringBuilder hinzugefügt, wie der Faktor n größer als 0 ist
         // In jedem Schleifenzyklus wird n um eins reduziert
         do {
             text.append(S);
@@ -87,7 +88,7 @@ public class MultiFunctionalUtility {
         try {
             if (s == null) {
                 throw new NullPointerException();
-            } else if (s.length() < 2) {
+            } else if (s.length() < 1) {
                 throw new IllegalArgumentException();
             } else {
                 return s.substring(0, 1).toUpperCase() + s.substring(1).toLowerCase();
@@ -96,6 +97,8 @@ public class MultiFunctionalUtility {
             throw new NullPointerException("Der String darf nicht leer sein");
         } catch (IllegalArgumentException eee) {
             throw new IllegalArgumentException("Der String muss mindestens die Länge eins haben!");
+            //IllegalArgumentException: Parameter ist nicht null, aber hat ungültigen Wert
+            //NullPointerException wird immer dann geworfen, wenn null anstelle einer Instanz eines Objekts verwendet wurde
         }
     }
 }

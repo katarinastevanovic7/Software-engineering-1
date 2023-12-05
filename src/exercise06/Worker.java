@@ -58,15 +58,17 @@ public class Worker implements INameInMultipleCases {
     @Override
     public String getNameInLowerCase() {
         //TODO b) indicate that this method is not implemented appropriately and document this behaviour
-        try {
-            if (Objects.equals(name, name.toLowerCase())) {
-                throw new UnsupportedOperationException();
-            }
-            return name.toLowerCase();
-        } catch (UnsupportedOperationException uoe) {
-            throw new UnsupportedOperationException("Method is not implemented");
-            //UnsupportedOperationException: wenn der Name des Workers bereits in Kleinbuchstaben vorliegt
-        }
+        throw new UnsupportedOperationException("Not implemented");
+//        try {
+//            if (Objects.equals(name, name.toLowerCase())) {
+//                throw new UnsupportedOperationException();
+//            }
+//            return name.toLowerCase();
+//        } catch (UnsupportedOperationException uoe) {
+//            throw new UnsupportedOperationException("Method is not implemented");
+//            UnsupportedOperationException: wenn der Name des Workers bereits in Kleinbuchstaben vorliegt
+//            allgemein: Methodenaufruf nicht unterstützt
+//        }
     }
 
     /**
