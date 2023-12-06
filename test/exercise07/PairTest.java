@@ -6,8 +6,8 @@ import static org.junit.Assert.assertEquals;
 public class PairTest {
     @Test
     public void testPairWithNonNullValues() {
-        Pair<String, Integer> pair = new Pair<>("Tanjiro", 1);
-        assertEquals("Tanjiro", pair.getLeft());
+        Pair<String, Integer> pair = new Pair<>("Hello", 1);
+        assertEquals("Hello", pair.getLeft());
         assertEquals(Integer.valueOf(1), pair.getRight());
     }
 
@@ -18,7 +18,7 @@ public class PairTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void testPairWithRightNull() {
-        Pair<String, Integer> pair = new Pair<>("Tanjiro", null);
+        Pair<String, Integer> pair = new Pair<>("Hello", null);
     }
 
     @Test(expected = IllegalArgumentException.class)
