@@ -5,7 +5,7 @@ public class Pair<L, R> {
     private final R right;
 
     public Pair(L left, R right) {
-        if ((left == null || right == null) || (left == null && right == null)) {
+        if (left == null || right == null) {
             throw new IllegalArgumentException("left and right cannot be null");
         }
         this.left = left;
@@ -20,6 +20,7 @@ public class Pair<L, R> {
         return right;
     }
 
+    //gibt den Inhalt des paares aus
     public String toString() {
         return "(" + left + ", " + right + ")";
     }

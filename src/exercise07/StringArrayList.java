@@ -1,5 +1,6 @@
 package exercise07;
 
+import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 public class StringArrayList implements ISimpleStringList {
@@ -20,7 +21,7 @@ public class StringArrayList implements ISimpleStringList {
 
     @Override
     // Gibt das Element an der angegebenen Position zurück
-    // Wirft eine NoSuchElementException, wenn kein Element an der angegebenen Position existiert
+    // NoSuchElementException wenn kein Element an der angegebenen Position existiert
     public String get(int pos) throws NoSuchElementException {
         if (pos < 0 || pos >= size) {
             throw new NoSuchElementException();
@@ -40,9 +41,10 @@ public class StringArrayList implements ISimpleStringList {
             String[] newData = new String[data.length * 2];
             System.arraycopy(data, 0, newData, 0, data.length);
             data = newData;
+            //data = Arrays.copyOf(data, data.length * 2);
         }
         //verschiebt Elemente um Platz zu machen
-        //durchläuft die Elemente des Arrays rückwärts, beginnt beim letzten Element (size - 1) bis pos
+        //durchläuft die Elemente des Arrays rückwärts
         for (int i = size - 1; i >= pos; i--) {
         //i wird um eine Position nach rechts verschoben
             data[i + 1] = data[i];
