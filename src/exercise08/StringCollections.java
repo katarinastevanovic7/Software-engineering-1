@@ -24,6 +24,7 @@ public class StringCollections {
 
 
         // TODO d)
+        // jeden  Wert in eigenen Zeile ausgeben
         System.out.println("=== d) ");
         for (String entry : list) {
             System.out.println(entry);
@@ -40,7 +41,8 @@ public class StringCollections {
 
 
         // TODO g)
-        Collections.reverse(list);
+        //Collections.reverse(list);
+        Collections.sort(list, Comparator.reverseOrder());
         System.out.println("=== g) " + list);
 
 

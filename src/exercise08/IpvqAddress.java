@@ -22,6 +22,14 @@ public class IpvqAddress implements Comparable<IpvqAddress> {
      * @throws IllegalArgumentException if address has the wrong format
      */
     public IpvqAddress(String address) {
+        // überprüft, ob die Adresse dem regex entspricht
+        // [0-9] wert von 0 bis 9
+        // [1-9][0-9] zweistelliger wert von 10 bis 99
+        // [1-4][0-9][0-9] dreistelliger wert 100 bis 499
+        // 50[0-9] 500 bis 509
+        // 510 oder 511
+        // 4 mal wiederholt getrennt durch ;
+        // danach eine fünfte Komponente ohne Semikolon
         final String ipvqPattern = "((([0-9]|[1-9][0-9]|[1-4][0-9][0-9]|50[0-9]|510|511);){4}([0-9]|[1-9][0-9]|[1-4][0-9][0-9]|50[0-9]|510|511))";
         if (!address.matches(ipvqPattern)) {
             throw new IllegalArgumentException("Invalid adress: " + address);
@@ -34,6 +42,7 @@ public class IpvqAddress implements Comparable<IpvqAddress> {
             throw new IllegalArgumentException("Invalid address: " + address);
         }
         try {
+            // in 5 Komponenten aufteilen und in Integer konvertieren
             this.component1 = Integer.parseInt(components[0]);
             this.component2 = Integer.parseInt(components[1]);
             this.component3 = Integer.parseInt(components[2]);
@@ -94,9 +103,11 @@ public class IpvqAddress implements Comparable<IpvqAddress> {
         if (this == obj) {
             return true;
         }
+        //überprüft, ob das übergebene Objekt null ist oder nicht vom gleichen Typ ist
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
+        //wenn es vom gleichen Typ ist, einzelne Komponenten vergleichen
         IpvqAddress other = (IpvqAddress) obj;
         return component1 == other.component1 &&
                 component2 == other.component2 &&
@@ -106,6 +117,7 @@ public class IpvqAddress implements Comparable<IpvqAddress> {
     }
 
     @Override
+    //wird sichergestellt dass Objekte die gleich sind (nach equals), denselben Hashcode haben
     public int hashCode() {
         return Objects.hash(component1, component2, component3, component4, component5);
     }

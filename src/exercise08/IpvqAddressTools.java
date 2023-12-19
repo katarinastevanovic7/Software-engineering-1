@@ -19,6 +19,7 @@ public class IpvqAddressTools {
      * @return              A list of the addresses in the same order as in the file
      * @throws IOException  if some I/O error occurs (e.g. file not existent)
      */
+    //liest datei mit ipvq adressen, jede Zeile enthält eine adresse
     public static List<IpvqAddress> readFromFile(String fileName) throws IOException {
         Path path = Paths.get(fileName);
         List<String> lines = Files.readAllLines(path);
@@ -27,6 +28,7 @@ public class IpvqAddressTools {
         //System.out.println(lines);
 
         // TODO: convert lines to a list of type IpvqAddress
+        // erstellt eine leere Liste, durchläuft jede zeichenkette line in der Liste lines
         List<IpvqAddress> addresses = new ArrayList<>();
         for (String line : lines) {
             IpvqAddress address = new IpvqAddress(line);
@@ -42,6 +44,7 @@ public class IpvqAddressTools {
      * @return              A list of the addresses sorted ascending
      * @throws IOException  if some I/O error occurs (e.g. file not existent)
      */
+    //liest die adressen und sortiert sie aufsteigend und gibt die adresses zurück
     public static List<IpvqAddress> readFromFileSorted(String fileName) throws IOException {
         // Hint: You can use readFromFile here, too
         List<IpvqAddress> addresses = readFromFile(fileName);
@@ -57,6 +60,7 @@ public class IpvqAddressTools {
      *                      entries.
      * @throws IOException  if some I/O error occurs (e.g. file not existent)
      */
+    //liest ein und gibt eine Liste ohne duplikate mit LinkedHashSet zurück
     public static Collection<IpvqAddress> readFromFileWithoutDuplicates(String fileName) throws IOException {
         // Hint 1: You can use readFromFile here, too
         // Hint 2: The implementation is very, very simple if you know the suitable Java collection to return...
@@ -72,9 +76,14 @@ public class IpvqAddressTools {
      * @return          a set of duplicates, can have any order
      */
     public static Set<IpvqAddress> findDuplicates(List<IpvqAddress> addresses) {
+        //leeres HashSet für duplikate
         Set<IpvqAddress> duplicates = new HashSet<>();
+        //leeres Hashset für einmalige werte
         Set<IpvqAddress> uniqueAddresses = new HashSet<>();
+        // durchläuft jede ipvqaddress in liste addresses
         for (IpvqAddress address : addresses) {
+            //überprüft ob es zu uniqueAdresses hinzugefügt werden kann wenn ja true, und wenn bereits vorhanden false
+            //dann kommt es in duplicates
             if (!uniqueAddresses.add(address)) {
                 duplicates.add(address);
             }
@@ -98,7 +107,9 @@ public class IpvqAddressTools {
         // Hint: What does map.get(0) return? And map.get(1)? ...
         // Iterate over all addresses and add them into the corresponding set.
         for (IpvqAddress address : addressList) {
+            // für jede Adresse wird die erste Komponente abgerufen
             int firstComponent = address.getComponent1();
+            // Dann wird das entsprechende Set aus der Map geholt und die aktuelle Adresse wird dem Set hinzugefügt
             Set<IpvqAddress> addressesWithFirstComponent = map.get(firstComponent);
             addressesWithFirstComponent.add(address);
         }
