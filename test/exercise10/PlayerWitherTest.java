@@ -1,4 +1,7 @@
-package Aufgabe10;
+package exercise10;
+
+import org.junit.Assert;
+import org.junit.Test;
 
 import java.util.List;
 

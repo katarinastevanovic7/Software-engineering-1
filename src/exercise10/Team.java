@@ -1,4 +1,4 @@
-package Aufgabe10;
+package exercise10;
 import java.util.Objects;
 
 public class Team {

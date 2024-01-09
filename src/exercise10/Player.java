@@ -1,4 +1,8 @@
-package Aufgabe10;
+package exercise10;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 public final class Player {
 
