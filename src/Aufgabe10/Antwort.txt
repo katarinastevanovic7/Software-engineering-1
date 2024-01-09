@@ -1,0 +1,21 @@
+Alex hat gerade das Informatik-Studium begonnen. Sie erklären Alex die
+Vorgehensweise "Howto: Unveränderliche Datenklassen anlegen" (s. entsprechende
+Vorlesungsfolie). Alex hat schon eine Java-Vorlesung gehört und meint daraufhin,
+dass es doch vollkommen ausreiche, alle Attribute als final zu deklarieren.
+Denn, so hat es Alex gelernt: Man kann den Wert einer als final deklarierten
+Variable nicht mehr ändern. Hat Alex recht? Schreiben Sie die Antwort in eine
+Datei Antwort.txt, die Sie zusammen mit dem Code dieser Abgabe committen.
+
+
+- Alex hat grundsätzlich Recht. Durch die Deklaration eines Attributes als 'final' wird sichergestellt, dass innerhalb der Klasse, die Referenz auf das Objekt nicht mehr geändert
+	werden kann.
+- Zusätzlich sollten die Attribute als privat deklariert sein, damit dieser Zustand auch von außerhalb (z.B. durch andere Klassen) unverändert bleibt. Das Attribut könnte nämlich
+	eine Referenz auf ein mutierbares Objekt enthalten und wäre dadurch veränderbar.
+- Es sollten keine setter Methoden vorhanden sein, mit denen man den Wert auch von außerhalb "manipulieren" könnte.
+- Es sollte auch eine tiefe(rgreifendere) Kopie erzeugt werden, damit der Zustand privat und die Eigenschaften davon, vor externen Änderungen geschützt ist bzw. bleibt.
+- immutable Klasse sind auch eine Möglichkeit, die Attribute nachträglich nicht mehr ändern zu können.
+	Eigenschaften dieser Klassen sind:
+		- alle Attribute sind final
+		- es gibt keine setter Methoden
+		- Referenz-Objekte werden bei der Ein- und Ausgabe kopiert.
+
